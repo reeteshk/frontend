@@ -49,6 +49,7 @@ function App() {
     const { data } = await axios.get("/api/v1/stripeapikey");
 
     setStripeApiKey(data.stripeApiKey);
+    const response=await axios.post("https://getgrocery-api.onrender.com/",data);
   }
 
   useEffect(() => {
