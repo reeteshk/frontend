@@ -41,8 +41,6 @@ import OrderList from './component/Admin/OrderList';
 import ProcessOrder from './component/Admin/ProcessOrders.js';
 import UsersList from './component/Admin/UsersList.js'
 import UpdateUser from './component/Admin/UpdateUser.js';
-
-
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
 
@@ -71,6 +69,7 @@ function App() {
   return (
     <Router>
       <Header />
+      <ScrollToTop />
 
       {isAuthenticated && <UserOptions user={user} />}
 
@@ -80,7 +79,6 @@ function App() {
         </Elements>
       )}
 
-<ScrollToTop />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/product/:id" component={ProductDetails} />
@@ -139,8 +137,6 @@ function App() {
           isAdmin={true}
           component={NewProduct}
         />
-
-        
         <ProtectedRoute
           exact
           path="/admin/orders"
@@ -168,7 +164,7 @@ function App() {
           component={UpdateUser}
         />
 
-        
+
       </Switch>
 
       <Footer />
@@ -176,4 +172,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;
