@@ -66,13 +66,14 @@ function App() {
     <Router >
       <Header />
       {isAuthenticated && <UserOptions user={user} />}
-      <ScrollToTop />
-      <Switch>
       {stripeApiKey && (
           <Elements stripe={loadStripe(stripeApiKey)}>
             <Route exact path="/process/payment" component={Payment} />
           </Elements>
         )}
+      <ScrollToTop />
+      <Switch>
+     
         <Route exact path="/" component={Home} />
         <Route exact path="/product/:id" component={ProductDetails} />
         <Route exact path="/products" component={Products} />
