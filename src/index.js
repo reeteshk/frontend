@@ -7,7 +7,9 @@ import { Provider } from "react-redux";
 import store from "./store";
 import { positions, transitions, Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-mui";
+import { disableReactDevTools } from '@fvilers/disable-react-devtools';
 
+if(process.env.NODE_ENV === 'production') disableReactDevTools()
 const options = {
   timeout: 1000,
   position: positions.TOP_CENTER,
