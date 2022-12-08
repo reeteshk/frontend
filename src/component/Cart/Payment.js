@@ -57,7 +57,7 @@ const Payment = ({ history }) => {
         },
       };
       const { data } = await axios.post(
-        "/api/v1/payment/process",
+        "https://getgrocery-api.onrender.com/api/v1/payment/process",
         paymentData,
         config
       );
